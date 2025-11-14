@@ -1,0 +1,235 @@
+📊 Business Insights – Zepto SQL Analysis
+
+This document summarizes all the business insights derived from the SQL analysis performed on the Zepto-style grocery dataset.
+The insights help in understanding product performance, pricing patterns, inventory status, and revenue potential.
+
+📌 1. Out-of-Stock Analysis
+
+A total of 453 products were found to be out of stock.
+
+Categories with high out-of-stock counts may indicate:
+
+High customer demand
+
+Poor inventory management
+
+Reordering delays
+
+
+📌 2. Duplicate Product Names
+
+Multiple products share the same name.
+
+Indicates:
+
+Multiple variations of the same item (sizes, weights)
+
+Potential duplicate entries in the dataset
+
+Useful for SKU consolidation and inventory optimization.
+
+
+📌 3. Zero-Priced Products
+
+Some products had:
+
+mrp = 0
+
+discountedSellingPrice = 0
+
+These entries were removed as they represent invalid data.
+
+Helps ensure reliable pricing insights.
+
+
+📌 4. Pricing Conversion
+
+MRP and discounted prices were originally in paise, converted to rupees.
+
+Ensures accuracy in financial calculations like revenue and discount percentages.
+
+
+📌 5. Top 10 Best Value Products
+
+Products with the highest discount percentages were identified.
+
+These can be promoted more aggressively for customer attraction.
+
+Helps in planning discounts and promotional strategies.
+
+
+📌 6. High-MRP Products Out of Stock
+
+Products with MRP > 300 and marked out of stock suggest:
+
+High-demand premium items
+
+Lost revenue opportunities
+
+Need for faster restocking cycles
+
+
+📌 7. Estimated Revenue by Category
+
+Revenue = discountedSellingPrice × availableQuantity
+
+Categories with highest revenue contributions help inform:
+
+Stocking priorities
+
+Category-wise marketing focus
+
+Supplier negotiations
+
+
+📌 8. High-MRP Low-Discount Products
+
+Identified products with:
+
+MRP > 500
+
+Discount < 10%
+
+These represent premium items with high profit margins.
+
+Useful for margin-focused promotions.
+
+
+📌 9. Highest Average Discount Categories
+
+Top 5 categories with the highest average discount percentages were extracted.
+
+Provides insights into:
+
+Most discounted categories
+
+Customer-attracting categories
+
+Potential areas of over-discounting
+
+
+📌 10. Price Per Gram Analysis
+
+Identified products above 100g and calculated:
+
+price_per_gram = discountedSellingPrice / weightInGms
+
+Helps in:
+
+Comparing product value across brands
+
+Highlighting best-value products
+
+Bulk purchase planning
+
+
+📌 11. Weight-Based Product Segmentation
+
+Products were grouped into:
+
+Low Weight (< 1000g)
+
+Medium Weight (1000–5000g)
+
+Bulk (> 5000g)
+
+Helps understand:
+
+Packaging trends
+
+Consumer buying patterns
+
+Storage and logistics planning
+
+
+📌 12. Total Inventory Weight per Category
+
+Useful for:
+
+Warehouse load planning
+
+Delivery weight optimization
+
+Category-wise storage costs
+
+
+📌 13. Most Popular Categories
+
+Categories with the highest product counts indicate:
+
+High variety offerings
+
+Customer-focused segments
+
+Potential areas to expand
+
+
+📌 14. Highest Absolute Discount (Top 10)
+
+Calculated mrp – discountedSellingPrice
+
+Shows the products with maximum real-world savings.
+
+Useful for:
+
+Banner ads
+
+Offers section
+
+Price-drop campaigns
+
+
+📌 15. Stock Value by Category (MRP Basis)
+
+Calculated potential revenue if all stock sells at MRP.
+
+Helps in identifying which categories carry:
+
+Maximum inventory value
+
+High-margin opportunities
+
+
+📌 16. Anomaly Detection
+
+Flagged potential issues like:
+
+Discount > 80%
+
+MRP < discountedSellingPrice (invalid pricing)
+
+These insights highlight:
+
+Data quality issues
+
+Incorrect entries
+
+System inconsistencies
+
+
+📌 17. Revenue Share % by Category
+
+Calculated category-wise percentage contribution to total revenue.
+
+Helps prioritize:
+
+Top-performing categories
+
+Inventory investment
+
+Marketing strategies
+
+
+📝 Conclusion
+
+This analysis provides a detailed understanding of product pricing, inventory health, discount strategies, and revenue distribution. The dataset can be used to drive business decisions such as:
+
+Restocking high-demand products
+
+Optimizing discount strategies
+
+Identifying revenue-heavy categories
+
+Filtering invalid or anomalous data
+
+Improving procurement and warehouse planning
